@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="bronco_1966 v0.35.blend" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="9" filename="UDIM_Rim_specular.dds"/>
+    <File fileId="3" filename="UDIM_Tire_specular.dds"/>
+    <File fileId="2" filename="new_shaders/default_normal.dds"/>
+    <File fileId="4" filename="new_shaders/vehicleShader.xml"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="UDIM_Tire" materialId="4" diffuseColor="0.0156863 0.0156863 0.0156863 1" customShaderId="4" customShaderVariation="tirePressureDeformation">
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <CustomParameter name="RDT" value="0 0.5 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.8 0.55 0.05 1"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+      <CustomParameter name="morphPosition" value="-0.45 -0.915 0.5 0.1"/>
+    </Material>
+    <Material name="UDIM_Rim" materialId="5" diffuseColor="0.611765 0.611765 0.611765 1" customShaderId="4" customShaderVariation="colorMask">
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="9"/>
+      <CustomParameter name="RDT" value="0 0.5 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.8 0.8 0.8 8"/>
+      <CustomParameter name="colorMat1" value="0.25 0.25 0.25 3"/>
+      <CustomParameter name="colorMat2" value="0.35 0.35 0.35 8"/>
+      <CustomParameter name="colorMat3" value="0.02 0.02 0.02 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.35 1 1 1"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="bronco.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="tires" nodeId="10">
+      <Shape shapeId="1" name="tire" translation="-0.076 0 0" scale="1 0.8 0.8" nodeId="11" materialIds="4" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="1" name="tire02" translation="0.0770509 0 -1.33801e-08" rotation="0 180 0" scale="1 0.8 0.8" nodeId="18" materialIds="4" castsShadows="true" receiveShadows="true"/>
+    </TransformGroup>
+    <TransformGroup name="rims" nodeId="13">
+      <Shape shapeId="2" name="rim_L" translation="-0.076 0 0" scale="1 0.8 0.8" nodeId="14" materialIds="5" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="3" name="rim_R" translation="0.076 0 0" scale="1 0.8 0.8" nodeId="15" materialIds="5" castsShadows="true" receiveShadows="true"/>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

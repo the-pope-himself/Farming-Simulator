@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CustomShader version="4">
+    <Parameters>
+        <Parameter name="beltClipOffsets" target="beltClipOffsets" type="float4" defaultValue = "1 0 1 0" minValue = "0 0 0 0" maxValue = "100.0 100.0"/>
+        <Parameter name="beltUVScale" target="beltUVScale" type="float2" defaultValue = "1.0 1.0" minValue = "0.0 0.0" maxValue = "100.0 100.0"/>
+    </Parameters>
+    <LodLevel startDistance="0">
+        <CodeInjections>
+        
+            <CodeInjection position="MATERIALINFO">
+<![CDATA[
+    uniform float4 beltClipOffsets;
+    uniform float2 beltUVScale;
+]]>
+            </CodeInjection>
+            <CodeInjection position="VS_OUTPUT">
+<![CDATA[
+    float beltClipPosition : TEXCOORDn;
+]]>
+            </CodeInjection>
+            <CodeInjection position="POST_SET_TEXCOORDS_VS">
+<![CDATA[
+    Out.defaultTexCoords.y *= 10; // Transform from uv space to world space (the engine stores world space / 10)
+    Out.beltClipPosition = Out.defaultTexCoords.y;
+    Out.defaultTexCoords *= beltUVScale;
+]]>
+            </CodeInjection>
+            <CodeInjection position="ALPHA_FS">
+<![CDATA[
+    alpha = (In.vs.beltClipPosition < beltClipOffsets.x || In.vs.beltClipPosition > beltClipOffsets.y) && (In.vs.beltClipPosition < beltClipOffsets.z || In.vs.beltClipPosition > beltClipOffsets.w);
+
+    alpha *= tex2D(baseMap, In.vs.defaultTexCoords).a; // 50keda edit to support alpha blending
+]]>
+            </CodeInjection>
+            <CodeInjection position="DO_ALPHA_TEST_FS">
+<![CDATA[
+#if !defined(DIFFUSE)
+    clip(alphaValue - 0.5);
+#endif
+    return;
+]]>
+            </CodeInjection>
+        </CodeInjections>
+    </LodLevel>
+</CustomShader>

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="40">
+    <author>TorkModding, MdkMods, The Expendables, Pope</author>
+    <version>1.0.0.5</version>
+    <title>
+        <en>Landcruiser J70</en>
+        <de>Landcruiser J70</de>
+    </title>
+    <description>
+        <en>Landcruiser J70</en>
+        <de>Landcruiser J70</de>
+    </description>
+    <specializations>
+        <specialization name="logsWinch" className="LogsWinch" filename="script/logsWinch.lua"/>
+    </specializations>
+    <vehicleTypes>
+        <type name="J70Winch" parent="carFillable" className="Vehicle" filename="$dataS/scripts/vehicles/Vehicle.lua">
+            <specialization name="logsWinch"/>
+            <specialization name="turnOnVehicle"/>
+            <specialization name="powerConsumer"/>
+            <specialization name="attachable"/>
+        </type>
+    </vehicleTypes>
+    <actions>
+        <action name="LOGSWINCH_ATTACH_DETACH" ignoreComboMask="false" axisType="HALF" category="ONFOOT"/>
+        <action name="LOGSWINCH_DETACH_ALL" ignoreComboMask="false" axisType="HALF" category="VEHICLE"/>
+        <action name="LOGSWINCH_WINCH_PLAYER" ignoreComboMask="false" axisType="HALF" category="ONFOOT"/>
+        <action name="LOGSWINCH_WINCH_VEHICLE" ignoreComboMask="false" axisType="HALF" category="VEHICLE"/>
+        <action name="LOGSWINCH_WINCH_SPEEDUP_PLAYER" ignoreComboMask="false" axisType="HALF" category="ONFOOT"/>
+        <action name="LOGSWINCH_WINCH_SPEEDUP_VEHICLE" ignoreComboMask="false" axisType="HALF" category="VEHICLE"/>
+        <action name="LOGSWINCH_RELEASE_PLAYER" ignoreComboMask="false" axisType="HALF" category="ONFOOT"/>
+        <action name="LOGSWINCH_RELEASE_VEHICLE" ignoreComboMask="false" axisType="HALF" category="VEHICLE"/>
+        <action name="LOGSWINCH_SWITCH_TO_NEXT" ignoreComboMask="false" axisType="HALF" category="ONFOOT"/>
+        <action name="LOGSWINCH_SWITCH_TRAILER_HOOK" ignoreComboMask="false" axisType="HALF" category="ONFOOT"/>
+    </actions>
+    <inputBinding>
+        <actionBinding action="LOGSWINCH_ATTACH_DETACH">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_b" axisComponent="+" neutralInput="0" index="1"/>
+        </actionBinding>
+        <actionBinding action="LOGSWINCH_DETACH_ALL">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lshift KEY_b" axisComponent="+" neutralInput="0" index="1"/>
+        </actionBinding>
+        <actionBinding action="LOGSWINCH_WINCH_PLAYER">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_z" axisComponent="+" neutralInput="0" index="1"/>
+        </actionBinding>
+        <actionBinding action="LOGSWINCH_WINCH_VEHICLE">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_z" axisComponent="+" neutralInput="0" index="1"/>
+        </actionBinding>
+        <actionBinding action="LOGSWINCH_WINCH_SPEEDUP_PLAYER">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lshift KEY_z" axisComponent="+" neutralInput="0" index="1"/>
+        </actionBinding>
+        <actionBinding action="LOGSWINCH_WINCH_SPEEDUP_VEHICLE">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lshift KEY_z" axisComponent="+" neutralInput="0" index="1"/>
+        </actionBinding>
+        <actionBinding action="LOGSWINCH_RELEASE_PLAYER">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_x" axisComponent="+" neutralInput="0" index="1"/>
+        </actionBinding>
+        <actionBinding action="LOGSWINCH_RELEASE_VEHICLE">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lshift KEY_x" axisComponent="+" neutralInput="0" index="1"/>
+        </actionBinding>
+        <actionBinding action="LOGSWINCH_SWITCH_TO_NEXT">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lshift KEY_g" axisComponent="+" neutralInput="0" index="1"/>
+        </actionBinding>
+        <actionBinding action="LOGSWINCH_SWITCH_TRAILER_HOOK">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_o" axisComponent="+" neutralInput="0" index="1"/>
+        </actionBinding>
+    </inputBinding>
+    <l10n>
+        <text name="action_LOGSWINCH_ATTACH_DETACH">
+            <en>TAJFUN: Attach/Detach Object</en>
+            <de>TAJFUN: Objekt anbringen/ablösen</de>
+        </text>
+        <text name="action_LOGSWINCH_DETACH_ALL">
+            <en>TAJFUN: Detach All</en>
+            <de>TAJFUN: Alles ablösen</de>
+        </text>
+        <text name="action_LOGSWINCH_WINCH_SPEEDUP_PLAYER">
+            <en>TAJFUN: Fast Winch via Remote</en>
+            <de>TAJFUN: Schnell winden über Ferbedienung</de>
+        </text>
+        <text name="action_LOGSWINCH_WINCH_SPEEDUP_VEHICLE">
+            <en>TAJFUN: Fast Winch</en>
+            <de>TAJFUN: Schnell winden</de>
+        </text>
+        <text name="action_LOGSWINCH_WINCH_PLAYER">
+            <en>TAJFUN: Winch via Remote</en>
+            <de>TAJFUN: Winden über Ferbedienung</de>
+        </text>
+        <text name="action_LOGSWINCH_WINCH_VEHICLE">
+            <en>TAJFUN: Winch</en>
+            <de>TAJFUN: Winden</de>
+        </text>
+        <text name="action_LOGSWINCH_RELEASE_PLAYER">
+            <en>TAJFUN: Release Rope via Remote</en>
+            <de>TAJFUN: Seile lösen über Ferbedienung</de>
+        </text>
+        <text name="action_LOGSWINCH_RELEASE_VEHICLE">
+            <en>TAJFUN: Release Rope</en>
+            <de>TAJFUN: Seile lösen</de>
+        </text>
+        <text name="action_LOGSWINCH_SWITCH_TO_NEXT">
+            <en>TAJFUN: Change Active Winch</en>
+            <de>TAJFUN: Aktive Winde wechseln</de>
+        </text>
+        <text name="action_LOGSWINCH_SWITCH_TRAILER_HOOK">
+            <en>TAJFUN: (Un)mount Trailer Hook</en>
+            <de>TAJFUN: Anhängerhaken (de)montiren</de>
+        </text>
+        <text name="input_LOGSWINCH_ATTACH_DETACH">
+            <en>TAJFUN: Attach/Detach Object</en>
+            <de>TAJFUN: Objekt anbringen/ablösen</de>
+        </text>
+        <text name="input_LOGSWINCH_DETACH_ALL">
+            <en>TAJFUN: Detach All</en>
+            <de>TAJFUN: Alles ablösen</de>
+        </text>
+        <text name="input_LOGSWINCH_WINCH_SPEEDUP_PLAYER">
+            <en>TAJFUN: Fast Winch via Remote</en>
+            <de>TAJFUN: Schnell winden über Ferbedienung</de>
+        </text>
+        <text name="input_LOGSWINCH_WINCH_SPEEDUP_VEHICLE">
+            <en>TAJFUN: Fast Winch</en>
+            <de>TAJFUN: Schnell winden</de>
+        </text>
+        <text name="input_LOGSWINCH_WINCH_PLAYER">
+            <en>TAJFUN: Winch via Remote</en>
+            <de>TAJFUN: Winden über Ferbedienung</de>
+        </text>
+        <text name="input_LOGSWINCH_WINCH_VEHICLE">
+            <en>TAJFUN: Winch</en>
+            <de>TAJFUN: Winden</de>
+        </text>
+        <text name="input_LOGSWINCH_RELEASE_PLAYER">
+            <en>TAJFUN: Release Rope via Remote</en>
+            <de>TAJFUN: Seile lösen über Ferbedienung</de>
+        </text>
+        <text name="input_LOGSWINCH_RELEASE_VEHICLE">
+            <en>TAJFUN: Release Rope</en>
+            <de>TAJFUN: Seile lösen</de>
+        </text>
+        <text name="input_LOGSWINCH_SWITCH_TO_NEXT">
+            <en>TAJFUN: Change Active Winch</en>
+            <de>TAJFUN: Aktive Winde wechseln</de>
+        </text>
+        <text name="input_LOGSWINCH_SWITCH_TRAILER_HOOK">
+            <en>TAJFUN: (Un)mount Trailer Hook</en>
+            <de>TAJFUN: Anhängerhaken (de)montiren</de>
+        </text>
+        <text name="info_activeWinch">
+            <en>Active Winch: %s</en>
+            <de>Aktive Winde: %s</de>
+        </text>
+        <text name="info_activeWinchNotification">
+            <en>Active winch changed! You can now operate: %s</en>
+            <de>Aktive Winde verändert! Sie können jetz Winde: %s betreiben</de>
+        </text>
+        <text name="info_availableWinchRope">
+            <en>TAJFUN - Remaining Rope: %3.2f m</en>
+            <de>TAJFUN - Verbleibende Seile: %3.2f m</de>
+        </text>
+        <text name="info_availableWinchChain">
+            <en>TAJFUN - Remaining Chain: %3.2f m</en>
+            <de>TAJFUN - Verbleibende Kette: %3.2f m</de>
+        </text>
+        <text name="info_activeWinchAttached">
+            <en>%s. %s - %s</en>
+            <de>%s. %s - %s</de>
+        </text>
+        <text name="info_activeWinchDetached">
+            <en>%s. %s - detached</en>
+            <de>%s. %s - freistehend</de>
+        </text>
+        <text name="warning_attachedObjectsToHeavy">
+            <en>Attached object are to heavy! Detach one of them and try again.</en>
+            <de>Angehängte Objekte sind zu schwer! Ein Objekt ablösen und noch einmal versuchen.</de>
+        </text>
+        <text name="warning_turnOnLoggingWinch">
+            <en>Can't winch! Turn on logging winch first.</en>
+            <de>Kann nich winden! Forstseilwinde zuerst einschalten.</de>
+        </text>
+        <text name="typeDesc_logsWinch">
+            <en>Logging Winch</en>
+            <de>Forstseilwinde</de>
+        </text>
+        <text name="function_logsWinch">
+            <en>Winch can be used for dragging logs out of the woods.</en>
+            <de>Seilwinde kann für das Ziehen von Stämmen aus dem Wald verwendet werden.</de>
+        </text>
+    </l10n>
+    <brands>
+        <brand name="TOYOTA" title="Toyota" image="brand.dds"/>
+    </brands>
+    <iconFilename>store.dds</iconFilename>
+    <storeItems>
+        <storeItem rootNode="vehicle" xmlFilename="ToyotaLandcruiser.xml"/>
+    </storeItems>
+    <multiplayer supported="true"/>
+</modDesc>
